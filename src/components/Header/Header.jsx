@@ -1,9 +1,9 @@
-import { useTelegram } from "../../hooks/useTelegram";
+import { useTelegram } from "../../hooks/useTelegram.js";
 import Button from "../Button/Button";
-const tg = window.Telegram.WebApp;
 
 const Header = () => {
   const { onClose, user } = useTelegram();
+  console.log(user);
 
   return (
     <div className={"header"}>
