@@ -5,38 +5,43 @@ import "./ProductsList.css";
 
 const products = [
   {
-    id: 1,
+    id: "1",
     title: "Джинсы 1 ",
     price: 5000,
     description: "Cинего цвета, прямые",
   },
   {
-    id: 2,
+    id: "2",
     title: "Джинсы 2",
     price: 12000,
     description: "Cинего цвета, прямые",
   },
   {
-    id: 3,
+    id: "3",
     title: "Джинсы 3",
     price: 8000,
     description: "Cинего цвета, прямые",
   },
   {
-    id: 4,
+    id: "4",
     title: "Джинсы 4",
     price: 5000,
     description: "Cинего цвета, прямые",
   },
-  { id: 5, title: "Куртка", price: 6000, description: "Cинего цвета, прямые" },
   {
-    id: 6,
+    id: "5",
+    title: "Куртка 1",
+    price: 6000,
+    description: "Cинего цвета, прямые",
+  },
+  {
+    id: "6",
     title: "Куртка 2",
     price: 10000,
     description: "Cинего цвета, прямые",
   },
   {
-    id: 7,
+    id: "7",
     title: "Куртка 3",
     price: 9000,
     description: "Cинего цвета, прямые",
@@ -51,11 +56,11 @@ const getTotalPrice = (items) => {
 
 const ProductsList = () => {
   const [basket, setBasket] = useState([]);
+  const { tg } = useTelegram();
 
   const onAdd = (product) => {
     const alreadyAdded = basket.find((item) => item.id === product.id);
     let newItems = [];
-    const { tg } = useTelegram();
 
     if (alreadyAdded) {
       newItems = basket.filter((item) => item.id !== product.id);
@@ -74,11 +79,12 @@ const ProductsList = () => {
       });
     }
   };
+
   return (
     <div className={"list"}>
-      {products.map((item) => {
-        <ProductItem product={item} onAdd={onAdd} className={"item"} />;
-      })}
+      {products.map((item) => (
+        <ProductItem product={item} onAdd={onAdd} className={"item"} />
+      ))}
     </div>
   );
 };
