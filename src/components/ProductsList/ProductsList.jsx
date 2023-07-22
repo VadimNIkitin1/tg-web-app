@@ -4,7 +4,12 @@ import ProductItem from "../ProductItem/ProductItem";
 import "./ProductsList.css";
 
 const products = [
-  { id: 1, title: "Джинсы", price: 5000, description: "Cинего цвета, прямые" },
+  {
+    id: 1,
+    title: "Джинсы 1 ",
+    price: 5000,
+    description: "Cинего цвета, прямые",
+  },
   {
     id: 2,
     title: "Джинсы 2",
